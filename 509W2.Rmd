@@ -6,25 +6,27 @@ output: html_document
 
 My potential questions for this auantitative research project as following:
 
-<p> 1. What is the trend of research of social ineaulity in archaeolgy in the past decades? Is it popular in any particular time period?</p>
+1. What is the trend of research of social ineaulity in archaeolgy in the past decades? Is it popular in any particular time period?
 
-<p> 2. How often social inequality relates to culture contact? Especilally for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, Afirca.</p>    
+2. How often social inequality relates to culture contact? Especilally for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, Afirca.    
 
-<p> 3. For the method, what is the relationship between the term "inequality" and other arhcaeological evidence, including burials, ceramics, post holes, or glass beads. </p>   
+3. For the method, what is the relationship between the term "inequality" and other arhcaeological evidence, including burials, ceramics, post holes, or glass beads.
 
-<P>In order to run the codes for my questions, I will use following two lbraries: 
-<pre code>
+In order to run the codes for my questions, I will use following two lbraries: 
+
+```{r}
 library(devtools)
 library(JSTORr)
-</pre code>
+```
 
 The codes I need, for example:
-<pre code>
+```{r}
 # one word over time
 JSTOR_1word(multiple_archives, "social inequality")
 # two words over time
 JSTOR_2words(multiple_archives, "culture contact", "inequality")
 # correlation of words over time
-JSTOR_2wordcor(multiple_archives, "culture contact", "inequality")</pre code>
+JSTOR_2wordcor(multiple_archives, "culture contact", "inequality")
+```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
