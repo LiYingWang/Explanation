@@ -21,7 +21,7 @@ library(JSTORr)
 load("data/one_gram/multiple_archives.RData")
 ```
 
-For the first question, the plots show that the topic of inequality becomes common after maybe 1984, and has became popular around 2006. 
+For the first question, the plots show that the topic of inequality becomes common after maybe 1992, and has became popular around 2006. The term "social is commener than the term "inequality". I think the term, "social", is too general, which make such difference. Third graph shows that social and inequality were dicussesed together after 1978, but slightly goes down at 1986, and then popular again from 1994.    
 ```{r 1gram}
 # one word over time
 JSTOR_1word(multiple_archives, "inequality")
