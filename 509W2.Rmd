@@ -14,19 +14,19 @@ My potential questions for this quantitative research project as following:
 
 In order to run the codes for my questions, I will use following two libraries: 
 
-```{r}
-library(devtools)
+```{r data_input}
 library(JSTORr)
+multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data")
 ```
 
-The codes I need, for example:
-```{r}
+For the first question, the plots show that the topic of inequality becomes common after maybe 1984, and has became popular around 2006. 
+```{r 1gram}
 # one word over time
-JSTOR_1word(multiple_archives, "social inequality")
+JSTOR_1word(multiple_archives, "inequality")
 # two words over time
-JSTOR_2words(multiple_archives, "culture contact", "inequality")
+JSTOR_2words(multiple_archives, "social", "inequality")
 # correlation of words over time
-JSTOR_2wordcor(multiple_archives, "culture contact", "inequality")
+JSTOR_2wordcor(multiple_archives, "social", "inequality")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
