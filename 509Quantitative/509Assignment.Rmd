@@ -29,5 +29,28 @@ JSTOR_2words(multiple_archives, "social", "inequality")
 JSTOR_2wordcor(multiple_archives, "social", "inequality")
 ```
 
+My potential questions for this quantitative research project as following:
 
+1. What is the trend of research of social inequality in archaeology in the past decades? Is it popular in any particular time period?
+
+2. How often social inequality relates to culture contact? Especially for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, Africa.    
+
+3. For the method, what is the relationship between the term "inequality" and other archaeological evidence, including burials, ceramics, post holes, or glass beads.
+
+In order to run the codes for my questions, I will use following two libraries: 
+
+```{r data_input}
+library(JSTORr)
+multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data")
+```
+
+For the first question, the plots show that the topic of inequality becomes common after maybe 1984, and has became popular around 2006. 
+```{r 1gram}
+# one word over time
+JSTOR_1word(multiple_archives, "inequality")
+# two words over time
+JSTOR_2words(multiple_archives, "social", "inequality")
+# correlation of words over time
+JSTOR_2wordcor(multiple_archives, "social", "inequality")
+```
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
