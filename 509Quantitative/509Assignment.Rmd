@@ -4,31 +4,6 @@ author: Liying Wang
 output: html_document
 ---
 
-My potential questions for this auantitative research project as following:
-
-1. What is the trend of research of social ineaulity in archaeolgy in the past decades? Is it popular in any particular time period?
-
-2. How often social inequality relates to culture contact? Especilally for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, Afirca.    
-
-3. For the method, what is the relationship between the term "inequality" and other arhcaeological evidence, including burials, ceramics, post holes, or glass beads.
-
-In order to run the codes for my questions, I will use following two lbraries: 
-
-```{r data_input}
-library(JSTORr)
-multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data")
-```
-
-For the first question, the plots show that the topic of inequality becomes common after maybe 1984.  
-```{r 1gram}
-# one word over time
-JSTOR_1word(multiple_archives, "inequality")
-# two words over time
-JSTOR_2words(multiple_archives, "social", "inequality")
-# correlation of words over time
-JSTOR_2wordcor(multiple_archives, "social", "inequality")
-```
-
 My potential questions for this quantitative research project as following:
 
 1. What is the trend of research of social inequality in archaeology in the past decades? Is it popular in any particular time period?
@@ -41,7 +16,9 @@ In order to run the codes for my questions, I will use following two libraries:
 
 ```{r data_input}
 library(JSTORr)
-multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data")
+# multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data/one_gram")
+# save(multiple_archives, file= "data/one_gram/multiple_archives.RData" )
+load("data/one_gram/multiple_archives.RData")
 ```
 
 For the first question, the plots show that the topic of inequality becomes common after maybe 1984, and has became popular around 2006. 
