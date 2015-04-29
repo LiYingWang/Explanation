@@ -31,3 +31,23 @@ JSTOR_2words(multiple_archives, "social", "inequality")
 JSTOR_2wordcor(multiple_archives, "social", "inequality")
 ```
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r 1gram}
+# one word over time
+JSTOR_1word(multiple_archives, "inequality")
+# two words over time
+JSTOR_2words(multiple_archives, "social", "inequality")
+# correlation of words over time
+JSTOR_2wordcor(multiple_archives, "social", "inequality")
+```
+
+```{r 1gram}
+# subset samples
+nouns<- JSTOR_dtmofnouns(multiple_archives, word = NULL, sparse =1, POStag = TRUE)
+# Principal component analysis for articles containing inequality
+PCA_inequality <- JSTOR_clusterbywords(nouns, "inequality", f = 0.005)
+# Top words over time
+ineq_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'inequality', sparse =1, POStag = TRUE)
+ineq_freqwords <- JSTOR_freqwords(multiple_archives, ineq_nouns, n =3 )
+```
+

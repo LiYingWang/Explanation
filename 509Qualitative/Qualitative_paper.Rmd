@@ -1,0 +1,28 @@
+---
+title: "Qualitative paper"
+output: html_document
+---
+
+For my qualitative paper, I want to focus on a monograph archeological publication from Taiwan, which discusses European exchange network in the 17th century. However, it is more like a journal article, and I am not sure if that one meets the requirement of monograph. If not, then I will focus on a set of publications that address the issue of social inequality.
+
+For the first option, I will read: 
+
+Wang, Su-Chin , and Yi-Chang  Liu  2007 The Import Networks of Tobacco, Tobacco Pipes, and Glass Bead Ornaments into Taiwan Circa the Seventeenth Century: A New Phase of Exchange. 十七世紀前後臺灣煙草, 煙斗與玻璃珠飾的輸入網絡-一個新的交換階段. 國立臺灣大學美術史研究集刊 Taida Journal of Art History (22):51-83.
+
+For the second option, the publications as following:
+
+Arnold, Jeanne E., 1996, “Understanding the evolution of intermediate societies.” In, Emergent Complexity: The Evolution of Intermediate Societies, edited by Jeanne E. Arnold.  International Monographs in Prehistory, Ann Arbor. Pp. 1-12.
+
+Boehm, Christopher. 1993. Egalitarian behavior and reverse dominance hierarchy. Current Anthropology 34:227-254.
+
+Boone, James L.,  1992,  Competition, Conflict, and Development of Social Hierarchies.  In Evolutionary Ecology and Human Behavior, edited by E. A. Smith and B. P. Winterhalder, pp. 301-338.  Aldine de Gruyter, New York.
+
+Clark, John E. and Michael Blake. 1994. The power of prestige: competitive generosity and the emergence of rank societies in Lowland Mesoamerica. In Factional Competition and Political Development in the New World, E. M. Brumfiel and J, W. Fox (eds.). Cambridge: Cambridge University Press. Pp. 17-30.
+```
+
+
+```{r, echo=FALSE}
+#Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```
+
+
