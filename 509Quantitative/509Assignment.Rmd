@@ -1,5 +1,5 @@
 ---
-title: "W2"
+title: "W6"
 author: Liying Wang
 output: html_document
 ---
@@ -16,12 +16,18 @@ In order to run the codes for my questions, I will use following two libraries:
 
 ```{r data_input}
 library(JSTORr)
-# multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data/one_gram")
-# save(multiple_archives, file= "data/one_gram/multiple_archives.RData" )
+multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data/one_gram")
+save(multiple_archives, file= "data/one_gram/multiple_archives.RData" )
+multiple_archives2 <- JSTOR_unpack_multiple_archives(mydir = "data/two_gram")
+save(multiple_archives2, file= "data/two_gram/multiple_archives2.RData" )
 load("data/one_gram/multiple_archives.RData")
+load("data/two_gram/multiple_archives2.RData")
+# library(devtools)
+# download and install the package (do this only once ever per computer)
+# install_github("benmarwick/JSTORr")
 ```
 
-For the first question, the plots show that the topic of inequality becomes common after maybe 1992, and has became popular around 2006. The term "social is commener than the term "inequality". I think the term, "social", is too general, which make such difference. Third graph shows that social and inequality were dicussesed together after 1978, but slightly goes down at 1986, and then popular again from 1994.    
+For the first question, the plots show that the topic of inequality becomes common after maybe 1992, and has became popular around 2006. The term "social" is commener than the term "inequality". I think the term, "social", is too general, which make such difference. Third graph shows that social and inequality were dicussesed together after 1978, but slightly goes down at 1986, and then popular again from 1994.    
 ```{r 1gram}
 # one word over time
 JSTOR_1word(multiple_archives, "inequality")
@@ -30,24 +36,31 @@ JSTOR_2words(multiple_archives, "social", "inequality")
 # correlation of words over time
 JSTOR_2wordcor(multiple_archives, "social", "inequality")
 ```
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-```{r 1gram}
+
+```{r 2gram}
 # one word over time
-JSTOR_1word(multiple_archives, "inequality")
+JSTOR_1word(multiple_archives2, "social inequality")
 # two words over time
-JSTOR_2words(multiple_archives, "social", "inequality")
+JSTOR_2words(multiple_archives2, "social inequality", "European contact")
 # correlation of words over time
-JSTOR_2wordcor(multiple_archives, "social", "inequality")
+JSTOR_2wordcor(multiple_archives2, "social inequality", "European contact")
 ```
+
+The frequency of words containing “inequality” shows that the focus changes with time. The focus of paper shift from population, organization, and mound to ritual, power and pottery, which indicates there is a trend of anthropological thinking from 2006. Besdies, The term settlement could be observed in each period from 1996 until now, and it becomes more popular over time. 
 
 ```{r 1gram}
 # subset samples
 nouns<- JSTOR_dtmofnouns(multiple_archives, word = NULL, sparse =1, POStag = TRUE)
 # Principal component analysis for articles containing inequality
 PCA_inequality <- JSTOR_clusterbywords(nouns, "inequality", f = 0.005)
-# Top words over time
+# Two words
+PCA_social_ineq <- JSTOR_clusterbywords(nouns, c("inequality", "social"))
+# Top words containing 'inequality' over time
+# exclude some irrelevant words
+custom_stopwords <- c('archaeology', 'university', 'research', 'evidence', 'journal', 'world', 'site', 'cambridge', 'archaeol', 'area', 'region', 'period', 'analysis', 'anthropology', 'springer', 'production', 'figure', 'work', 'world', 'concept', 'human', 'middle', 'altamira', 'culture', 'record', 'citation', 'discipline', 'author', 'proportion', 'literature', 'report', 'approach', 'cambridge' )
 ineq_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'inequality', sparse =1, POStag = TRUE)
-ineq_freqwords <- JSTOR_freqwords(multiple_archives, ineq_nouns, n =3 )
+ineq_freqwords <- JSTOR_freqwords(multiple_archives, ineq_nouns, custom_stopwords, n = 5)
 ```
 
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
