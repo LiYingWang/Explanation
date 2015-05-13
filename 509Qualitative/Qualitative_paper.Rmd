@@ -36,6 +36,11 @@ Chen, Yu-Pei
 Lin, Shu-fen
 2004 Environmental and Climatic Changes in Ilan Plain over the Recent 4200 Years as Revealed by Pollen Data and their Relationship to Prehistory Colonization由孢粉紀錄看宜蘭平原最近4200年來的自然環境演變及其與史前文化發展之關係, Department of Geosciences, National Taiwan University.
 
+###Comment
+Search other sites, when burial costom changes 
+inferecne of (IBE)
+Yayoin Jomon
+different part of explanation in a same thesis. 
 
 ```{r, echo=FALSE}
 #Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

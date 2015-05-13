@@ -16,27 +16,51 @@ In order to run the codes for my questions, I will use following two libraries:
 
 ```{r data_input}
 library(JSTORr)
-multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data/one_gram")
-save(multiple_archives, file= "data/one_gram/multiple_archives.RData" )
+# multiple_archives <- JSTOR_unpack_multiple_archives(mydir = "data/one_gram")
+# save(multiple_archives, file= "data/one_gram/multiple_archives.RData" 
 multiple_archives2 <- JSTOR_unpack_multiple_archives(mydir = "data/two_gram")
 save(multiple_archives2, file= "data/two_gram/multiple_archives2.RData" )
-load("data/one_gram/multiple_archives.RData")
+# load("data/one_gram/multiple_archives.RData")
 load("data/two_gram/multiple_archives2.RData")
 # library(devtools)
 # download and install the package (do this only once ever per computer)
 # install_github("benmarwick/JSTORr")
+nouns_Asia<- JSTOR_dtmofnouns(multiple_archives, word = "asia", sparse =1, POStag = TRUE)
+nouns_Ame<- JSTOR_dtmofnouns(multiple_archives, word = "america", sparse =1, POStag = TRUE)
+nouns_Oce<- JSTOR_dtmofnouns(multiple_archives, word = "oceania", sparse =1, POStag = TRUE)
 ```
 
 For the first question, the plots show that the topic of inequality becomes common after maybe 1992, and has became popular around 2006. The term "social" is commener than the term "inequality". I think the term, "social", is too general, which make such difference. Third graph shows that social and inequality were dicussesed together after 1978, but slightly goes down at 1986, and then popular again from 1994.    
 ```{r 1gram}
 # one word over time
 JSTOR_1word(multiple_archives, "inequality")
+JSTOR_1word(multiple_archives, "contact")
+JSTOR_1word(multiple_archives, "complexity")
 # two words over time
 JSTOR_2words(multiple_archives, "social", "inequality")
+JSTOR_2words(multiple_archives, "contact", "inequality")
 # correlation of words over time
 JSTOR_2wordcor(multiple_archives, "social", "inequality")
+JSTOR_2wordcor(multiple_archives, "contact", "inequality")
+JSTOR_2wordcor(multiple_archives, "complexity", "inequality")
+JSTOR_2wordcor(multiple_archives, "complexity", "contact")
 ```
 
+These plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery.
+For the beads, it idicates that couple of articles have strong positive correlation around 1990. In addition, there is no much discussion until 1976. For the burials, I also shows that the dicussion of burial and inequality become common after the publication of the article in 1976. Besides, is seems there could be divided into two groups according to the extent of correlation. For the pottery, there is no clear correlation until 2006. After 2006, couple of articles shows the positive correlation. Based on this results, I can further explore these articles with positive correaltion.   
+
+```{r 1gram}
+# one word, inequality, in different area
+JSTOR_1word(nouns_Asia, "inequality")
+# correlation of inequality and evidence over time
+JSTOR_2wordcor(multiple_archives, "burials", "inequality")
+JSTOR_2wordcor(multiple_archives, "pottery", "inequality")
+JSTOR_2wordcor(multiple_archives, "bead", "inequality")
+# correlation of contact and inequality in different area
+JSTOR_2wordcor(nouns_Asia, "contact", "inequality")
+JSTOR_2wordcor(nouns_Ame, "contact", "inequality")
+JSTOR_2wordcor(nouns_Oce, "contact", "inequality")
+```
 
 ```{r 2gram}
 # one word over time
@@ -54,13 +78,18 @@ The frequency of words containing “inequality” shows that the focus changes 
 nouns<- JSTOR_dtmofnouns(multiple_archives, word = NULL, sparse =1, POStag = TRUE)
 # Principal component analysis for articles containing inequality
 PCA_inequality <- JSTOR_clusterbywords(nouns, "inequality", f = 0.005)
+PCA_inequality <- JSTOR_clusterbywords(nouns_Asia, "inequality", f = 0.005)
+PCA_inequality <- JSTOR_clusterbywords(nouns_Ame, "inequality", f = 0.005)
+PCA_inequality <- JSTOR_clusterbywords(nouns_Oce, "inequality", f = 0.005)
 # Two words
-PCA_social_ineq <- JSTOR_clusterbywords(nouns, c("inequality", "social"))
+PCA_social_ineq <- JSTOR_clusterbywords(nouns, c("inequality", "social"), f = 0.005)
 # Top words containing 'inequality' over time
 # exclude some irrelevant words
 custom_stopwords <- c('archaeology', 'university', 'research', 'evidence', 'journal', 'world', 'site', 'cambridge', 'archaeol', 'area', 'region', 'period', 'analysis', 'anthropology', 'springer', 'production', 'figure', 'work', 'world', 'concept', 'human', 'middle', 'altamira', 'culture', 'record', 'citation', 'discipline', 'author', 'proportion', 'literature', 'report', 'approach', 'cambridge' )
 ineq_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'inequality', sparse =1, POStag = TRUE)
 ineq_freqwords <- JSTOR_freqwords(multiple_archives, ineq_nouns, custom_stopwords, n = 5)
+con_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'contact', sparse =1, POStag = TRUE)
+con_freqwords <- JSTOR_freqwords(multiple_archives, con_nouns, custom_stopwords, n = 10)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
