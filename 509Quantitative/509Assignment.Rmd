@@ -93,3 +93,20 @@ con_freqwords <- JSTOR_freqwords(multiple_archives, con_nouns, custom_stopwords,
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+################################################################
+
+```{r load_data}
+# setwd("data/two_gram")
+# bigrams <- JSTOR_unpack2grams()
+# save(bigrams, file = "bigrams.RData")
+load("data/two_gram/bigrams.RData")
+```
+
+```{r bigrams_over_time}
+JSTOR_1bigram(bigrams, "social inequality")
+JSTOR_1bigram(bigrams, "european contact")
+JSTOR_2bigrams(bigrams, "social inequality", "european contact")
+JSTOR_2bigramscor(bigrams, "social inequality", "european contact")
+```
+
