@@ -1,5 +1,5 @@
 ---
-title: "W6"
+title: "W8"
 author: Liying Wang
 output: html_document
 ---
@@ -8,11 +8,11 @@ My potential questions for this quantitative research project as following:
 
 1. What is the trend of research of social inequality in archaeology in the past decades? Is it popular in any particular time period?
 
-2. How often social inequality relates to culture contact? Especially for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, Africa.    
+2. How often social inequality relates to culture contact? Especially for European contact. Also, does any area show preference of such research, such as North America, Southeast Asia, Oceania, or Africa.    
 
 3. For the method, what is the relationship between the term "inequality" and other archaeological evidence, including burials, ceramics, post holes, or glass beads.
 
-In order to run the codes for my questions, I will use following two libraries: 
+In order to run the codes for my questions, I will use the following two libraries: 
 
 ```{r data_input}
 library(JSTORr)
@@ -25,53 +25,66 @@ load("data/two_gram/multiple_archives2.RData")
 # library(devtools)
 # download and install the package (do this only once ever per computer)
 # install_github("benmarwick/JSTORr")
+```
+
+```{r load_data_bigram}
+# setwd("data/two_gram")
+# bigrams <- JSTOR_unpack2grams()
+# save(bigrams, file = "bigrams.RData")
+load("data/two_gram/bigrams.RData")
+```
+
+```{r subset_data}
 nouns_Asia<- JSTOR_dtmofnouns(multiple_archives, word = "asia", sparse =1, POStag = TRUE)
 nouns_Ame<- JSTOR_dtmofnouns(multiple_archives, word = "america", sparse =1, POStag = TRUE)
 nouns_Oce<- JSTOR_dtmofnouns(multiple_archives, word = "oceania", sparse =1, POStag = TRUE)
+nouns_Afr<- JSTOR_dtmofnouns(multiple_archives, word = "africa", sparse =1, POStag = TRUE)
 ```
 
-For the first question, the plots show that the topic of inequality becomes common after maybe 1992, and has became popular around 2006. The term "social" is commener than the term "inequality". I think the term, "social", is too general, which make such difference. Third graph shows that social and inequality were dicussesed together after 1978, but slightly goes down at 1986, and then popular again from 1994.    
+For the first question of the trend of social inequality, the plots show that the topic of inequality becomes common after maybe 1992, and then has became popular around 2006. The term "social" is commoner than the term "inequality". I think the reason is that this term "social" is too general. The third graph shows that social and inequality were decussated together after 1978, but slightly goes down around 1986, and then popular again from 1994.
+
 ```{r 1gram}
 # one word over time
 JSTOR_1word(multiple_archives, "inequality")
-JSTOR_1word(multiple_archives, "contact")
-JSTOR_1word(multiple_archives, "complexity")
 # two words over time
 JSTOR_2words(multiple_archives, "social", "inequality")
-JSTOR_2words(multiple_archives, "contact", "inequality")
 # correlation of words over time
 JSTOR_2wordcor(multiple_archives, "social", "inequality")
-JSTOR_2wordcor(multiple_archives, "contact", "inequality")
-JSTOR_2wordcor(multiple_archives, "complexity", "inequality")
-JSTOR_2wordcor(multiple_archives, "complexity", "contact")
 ```
 
-These plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery.
-For the beads, it idicates that couple of articles have strong positive correlation around 1990. In addition, there is no much discussion until 1976. For the burials, I also shows that the dicussion of burial and inequality become common after the publication of the article in 1976. Besides, is seems there could be divided into two groups according to the extent of correlation. For the pottery, there is no clear correlation until 2006. After 2006, couple of articles shows the positive correlation. Based on this results, I can further explore these articles with positive correaltion.   
+If I use "social inequality" as a term, the plots shows that such discussion only exists after 1978, becomes popular around 2000, and slightly goes down at 2002. In archaeology, social inequality is one of the indexes for social complexity. Therefore, I will also examine the discussion of social complexity in order to have a general understanding of such topic. The discussion of "social complexity" begins from 1947, becomes popular at around 1978, slightly goes down at 1990 and 2006, and then popular again at 2010. It seems like there is not big change in the discussion of these two terms. If we examine these two terms over time, the plot shows that they have different pattern of frequency. When social inequality was frequently discusses, the frequency of social complexity becomes lower. This might indicates the terms of social inequality and social complexity might have some pattern of relationship, which is to some extent mutually exclusive. Social inequality could be viewed as more specific approach to social complexity. 
+
+```{r bigrams_over_time}
+JSTOR_1bigram(bigrams, "social inequality")
+JSTOR_1bigram(bigrams, "social complexity")
+JSTOR_2bigrams(bigrams, "social inequality", "social complexity")
+```
+
+For the second question about the correlation between social inequality and European contact, the plot of two terms shows that there is a similar trend before 1994, but after 1994 there is no clear pattern shows the relationship. When we further examine the correlation between these two terms, the plot indicates that there is only an article shows the relatively strong correlation at 1996. In addition to European contact, I also examine the correlation between social inequality and social complexity. The plot shows that they are strongly correlated at 1987, 1998, and 2007, which shows the periodic pattern of discussion. This plot also explains the pattern in the former plot of word frequency.
+
+```{r bigrams_wordcor_over_time}
+JSTOR_2bigrams(bigrams, "social inequality", "european contact")
+JSTOR_2bigramscor(bigrams, "social complexity", "european contact")
+JSTOR_2bigramscor(bigrams, "social complexity", "social inequality")
+```
+
+These plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery.For the beads, it idicates that couple of articles have strong positive correlation around 1990. In addition, there is no much discussion until 1976. For the burials, I also shows that the dicussion of burial and inequality become common after the publication of the article in 1976. Besides, is seems there could be divided into two groups according to the extent of correlation. For the pottery, there is no clear correlation until 2006. After 2006, couple of articles shows the positive correlation. Based on this results, I can further explore these articles with positive correaltion.   
 
 ```{r 1gram}
 # one word, inequality, in different area
 JSTOR_1word(nouns_Asia, "inequality")
 # correlation of inequality and evidence over time
+# ??JSTOR_2bigramscor(bigrams, "social complexity", "burial")
 JSTOR_2wordcor(multiple_archives, "burials", "inequality")
 JSTOR_2wordcor(multiple_archives, "pottery", "inequality")
 JSTOR_2wordcor(multiple_archives, "bead", "inequality")
 # correlation of contact and inequality in different area
 JSTOR_2wordcor(nouns_Asia, "contact", "inequality")
-JSTOR_2wordcor(nouns_Ame, "contact", "inequality")
+# ??JSTOR_2wordcor(nouns_Ame, "contact", "inequality")
 JSTOR_2wordcor(nouns_Oce, "contact", "inequality")
 ```
 
-```{r 2gram}
-# one word over time
-JSTOR_1word(multiple_archives2, "social inequality")
-# two words over time
-JSTOR_2words(multiple_archives2, "social inequality", "European contact")
-# correlation of words over time
-JSTOR_2wordcor(multiple_archives2, "social inequality", "European contact")
-```
-
-The frequency of words containing “inequality” shows that the focus changes with time. The focus of paper shift from population, organization, and mound to ritual, power and pottery, which indicates there is a trend of anthropological thinking from 2006. Besdies, The term settlement could be observed in each period from 1996 until now, and it becomes more popular over time. 
+TBA
 
 ```{r 1gram}
 # subset samples
@@ -83,6 +96,11 @@ PCA_inequality <- JSTOR_clusterbywords(nouns_Ame, "inequality", f = 0.005)
 PCA_inequality <- JSTOR_clusterbywords(nouns_Oce, "inequality", f = 0.005)
 # Two words
 PCA_social_ineq <- JSTOR_clusterbywords(nouns, c("inequality", "social"), f = 0.005)
+```
+
+The frequency of words containing “inequality” shows that the focus changes with time. The focus of paper shift from population, organization, and mound to ritual, power and pottery, which indicates there is a trend of anthropological thinking from 2006. Besdies, The term settlement could be observed in each period from 1996 until now, and it becomes more popular over time. 
+
+```{r 1gram}
 # Top words containing 'inequality' over time
 # exclude some irrelevant words
 custom_stopwords <- c('archaeology', 'university', 'research', 'evidence', 'journal', 'world', 'site', 'cambridge', 'archaeol', 'area', 'region', 'period', 'analysis', 'anthropology', 'springer', 'production', 'figure', 'work', 'world', 'concept', 'human', 'middle', 'altamira', 'culture', 'record', 'citation', 'discipline', 'author', 'proportion', 'literature', 'report', 'approach', 'cambridge' )
@@ -95,18 +113,8 @@ con_freqwords <- JSTOR_freqwords(multiple_archives, con_nouns, custom_stopwords,
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ################################################################
-
-```{r load_data}
-# setwd("data/two_gram")
-# bigrams <- JSTOR_unpack2grams()
-# save(bigrams, file = "bigrams.RData")
-load("data/two_gram/bigrams.RData")
-```
-
-```{r bigrams_over_time}
-JSTOR_1bigram(bigrams, "social inequality")
-JSTOR_1bigram(bigrams, "european contact")
-JSTOR_2bigrams(bigrams, "social inequality", "european contact")
-JSTOR_2bigramscor(bigrams, "social inequality", "european contact")
-```
+Qestion: 
+1.If I use bigram code, the terms should be both 2gram? If one is 1gram, and another one is 2gram.
+2.Data subset only works in PCA? How can I subset the data for 2 words correlation? 
+3.Can I examine the top word for 2-gram?
 
