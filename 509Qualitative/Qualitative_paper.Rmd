@@ -1,6 +1,22 @@
 ---
-title: "Qualitative paper"
-output: html_document
+title:
+  # Title must be 150 characters or less
+  "A Capitalized Title: Something about a great Discovery"
+author:
+  - name: Liying Wang
+    affiliation: '1'
+    # If corresponding author (only one corresponding author per manuscript)
+    email: liying15@uw.edu
+affiliation:
+  - id: '1'
+    department: Department of Anthropology
+    institution: University of Washington
+    city: Seattle
+    state: Washington
+    country: USA
+output: rticles::plos_article
+csl: plos.csl
+#bibliography: library.bib
 ---
 
 ###Introduction
