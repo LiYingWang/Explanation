@@ -42,7 +42,7 @@ library(JSTORr)
 load("data/one_gram/multiple_archives.RData")
 # library(devtools)
 # download and install the package (do this only once ever per computer)
-# install_github("benmarwick/JSTORr")
+install_github("benmarwick/JSTORr")
 ```
 
 ```{r load_data_bigram}
@@ -87,13 +87,14 @@ social_inequality <- JSTOR_1bigram(bigrams, "social inequality")
 social_inequality_tbl <- social_inequality$data
 social_inequality_tbl[which.max(social_inequality_tbl$bigram_ratio), ]
 JSTOR_1bigram(bigrams, "social complexity")
+# correlation of words over time
 JSTOR_2bigrams(bigrams, "social inequality", "social complexity")
 ```
 
 For the second question about the correlation between social inequality and European contact, the plot of two terms shows that there is a similar trend before 1994, but after 1994 there is no clear pattern shows the relationship. When we further examine the correlation between these two terms, the plot indicates that there is only an article shows the relatively strong correlation at 1986. In addition to European contact, I also examine the correlation between social inequality and social complexity. The plot shows that they are strongly correlated at 1987, 1998, and 2007, which shows the periodic pattern of discussion. This plot also explains the pattern in the former plot of word frequency over time.
 
 ```{r bigrams}
-# two words over time
+# two words over timw
 JSTOR_2bigrams(bigrams, "social inequality", "european contact")
 # correlation of words over time
 JSTOR_2bigramscor(bigrams, "social inequality", "european contact")
@@ -154,7 +155,4 @@ con_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'contact', sparse =1, PO
 con_freqwords <- JSTOR_freqwords(multiple_archives, con_nouns, custom_stopwords, n = 10)
 ```
 
-################################################################
-
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
