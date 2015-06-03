@@ -42,7 +42,7 @@ library(JSTORr)
 load("data/one_gram/multiple_archives.RData")
 # library(devtools)
 # download and install the package (do this only once ever per computer)
-install_github("benmarwick/JSTORr")
+# install_github("benmarwick/JSTORr")
 ```
 
 ```{r load_data_bigram}
