@@ -21,26 +21,38 @@ csl: plos.csl
 
 ###Introduction
 
-In this paper, I will focus on a debate about whether the separate cultural layers in Kiwulan (KWL) site belong to the same prehistoric ethnic group. The KWL site is located at Ilan city and near a riverside at the northern margin of the Ilan plain. The site was excavated during 2001 to 2003 by the Department of Anthropology of National Taiwan University (Chen 2007). According to the archaeological remains, the site can be divided into a lower cultural layer and an upper cultural layer, dating from 1300B.P. to 800B.P. and 600B.P. to 100B.P., respectively, based on radiocarbon dates. However, there is a debate about whether the archaeological remains from both layers belong to the same culture or not. Chen (2004) argues that these two layers belong to the same culture based on similar pattern of artifacts. However, Chiu states that they belong to different culture or ethnic group due to the distinct style of mortuary practice. The following will further examine these two explanations.  
+In this paper, I will focus on a debate about whether the separate cultural layers in Kiwulan (KWL) site belong to the same prehistoric ethnic group. The KWL site is located at Ilan city and near a riverside at the northern margin of the Ilan plain in Northeastern Taiwan. The site was excavated during 2001 to 2003 by the Department of Anthropology of National Taiwan University (Chen 2007). According to the archaeological remains, the site can be divided into a lower culture layer and an upper culture layer, dating from 1300B.P. to 800B.P. and 600B.P. to 100B.P., respectively, based on radiocarbon dates. However, there is a debate about whether the archaeological remains from both layers belong to the same culture or not. Chen (2004) argues that these two layers belong to the same culture based on similar pattern of artifacts. However, Chiu states that they belong to different culture or ethnic group due to the distinct style of mortuary practice. The following will further examine these two explanations.  
 
 ###Archaeological evidence 
 
-Chen focuses on the similar archaeological remains in both layers. In both layer, we can find similar burial goods, such as glass beads, agate beads, and metal bell. In addition, the pattern of pottery in both layers shows the similar surface treatment, stamped decoration. 
-Chiu stresses the difference between these two layers based on mortuary practice. The common burial in lower cultural layer is secondary; however, most burials in upper cultural layer are primary and the bodies are in flexed position. 
+The excavation covered an area of 2,800 sqm and revealed hundreds of thousands of artifacts from a total of 262 archaeological excavation areas. The following I introduce the archaeological evidence found in these layers respectively.
+
+Lower culture layer (1300-800 B.P) 
+
+The archaeological evidence include a wide variety of pottery, post holes, slabs which are associated with households, 35 burials, few iron knifes and artifacts, grinding stones, slabs, imported ornaments such as glass beads, agate beads, metal bracelet, glass earrings, fauna remains such as deer and pigs. There is no much evidence relates to practices of agriculture, and hunting and gathering are believed as the main subsistence. For the pottery, there are different kinds of shape and form, including bowls, vessels, and pots. The most common type of pottery is the pottery with stamped geometric decoration. Although there are many types of pottery in the living area, only geometric decoration pottery and plain vessels found in burials as burial goods. In addition to pottery, imported ornaments are also the common burial goods. For the burials, secondary burial is the most common type, and slabs were used to serve as funerary utensils. The people abandoned this settlement around 800B.P due to the environmental change (Chen 2007).
+
+Upper culture layer (600-100 B.P.)
+
+The archaeological remains found in this period were more than lower culture layer. The archaeological evidence includes pottery, imported ceramics and stonewares, wooden artifacts such as table wares and tools, grinding stones, metal artifacts such as knives and points, imported ornaments such as glass beads, agates beads, and metal bracelets, pipes which made of stone, clay, and metal, local ornaments made of animal bones, shells, and wood, and fauna assemblage. In addition to artifacts, 90 burials and wooden pole structures were also excavated. These wooden poles were found aligned in a north-south direction with construction marks, which were interpreted as the remains of house structures. The distribution of features shows that the cemetery is located at the north part of house structures, which indicates the settlement was organized in some order. According to historical records, this settlement was believed as the biggest settlement in the 17th century (Nakamura 1938). The potteries were usually decorated with geometric design, which is similar to the pottery in earlier period. For the burials, the common funerary utensils were wooden boards. In addition to imported ornaments, imported ceramics were also the common burials goods (Chen 2007).
 
 ###Links between evidence and behavior
-The same culture hypothesis is based on the similar human practice on daily life, such as making pattery.
-Different culture hypothesis thinks that mortury parctice reflects the worldview of a ethnic group, which is the core element in a cultue and seldom change with time. 
+
+Chen (2007) focuses on the similar archaeological remains in both layers. In both layer, he states that we can find similar burial goods, such as glass beads, agate beads, and metal ornaments. In addition, the pattern of pottery in both layers shows the similar surface treatment, stamped geometric decoration. For the households, both periods were found post holes, which indicates they might have similar household structures. However, Chiu (2004) stresses the difference between these two layers based on mortuary practice. The common burial in lower cultural layer is secondary burials; on the other hand, most burials in upper cultural layer are primary and the bodies are in flexed position. He believed that the mortuary practice relates to the worldview and identity of an ethnic group. If they belong to different ethnic groups, then their mortuary practices will be different.
+
 ###Behavior at different scales 
 
 ###Discussion
-1. Context of the monograph’s explanatory model
-2. Relevant philosophy of science
-3. Critique
+
+1.Context of the monograph’s explanatory model The same culture hypothesis is based on the similar human practice on daily life, such as making pattery and living.Different culture hypothesis thinks that mortury parctice reflects the worldview of a ethnic group, which is the core element in a cultue and seldom change with time.
+
+2.Relevant philosophy of science Chen's (2007) arguments is based on the inference of best explanation, because he examine all of the evidence found in these two periods, and thinks these two periods belongs to the same culture can fit most evidence we found so far. However, Chiu’s (2004) arguments is based on the D-N model, which is based on the hypothesis that the mortuary practice is the core element in culture and seldom changes with time.
+
+3.Critique
 
 ###Conclusion
 
 ###Reference
+
 Chiu, Hung-Lin
 2004  Investigations of Mortuary Behaviors and Cultural Change of the Kivulan Site in I-Lan County, Taiwan. 宜蘭縣礁溪鄉淇武蘭遺址出土墓葬研究—埋葬行為與文化變遷的觀察, Department of Anthropology, National Taiwan University. 
 
@@ -53,10 +65,16 @@ Lin, Shu-fen
 2004 Environmental and Climatic Changes in Ilan Plain over the Recent 4200 Years as Revealed by Pollen Data and their Relationship to Prehistory Colonization由孢粉紀錄看宜蘭平原最近4200年來的自然環境演變及其與史前文化發展之關係, Department of Geosciences, National Taiwan University.
 
 ###Comment
-Search other sites, when burial costom changes 
-inferecne of (IBE)
-Yayoin Jomon
-different part of explanation in a same thesis. 
+
+Eerkens, Jelmer W., and Carl P. Lipo. "Cultural transmission theory and the archaeological record: providing context to understanding variation and temporal changes in material culture." Journal of Archaeological Research 15.3 (2007): 239-274.
+
+Tainter Joseph A. "Mortuary practices and the study of prehistoric social systems."Advances in archaeological method and theory (1978): 105-141.
+
+Binford, Lewis R. "Mortuary practices: their study and their potential." Memoirs of the Society for American Archaeology (1971): 6-29.
+
+Pearson, Michael Parker. "Mortuary practices, society and ideology: an ethnoarchaeological study."Symbolic and structural archaeology 1 (1982): 99-113.
+
+Search other sites, when burial costom changes inferecne of (IBE) Yayoin Jomon different part of explanation in a same thesis.
 
 ```{r, echo=FALSE}
 #Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
