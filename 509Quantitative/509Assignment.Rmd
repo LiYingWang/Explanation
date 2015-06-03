@@ -86,19 +86,19 @@ If I use "social inequality" as a term, the plots shows that such discussion onl
 social_inequality <- JSTOR_1bigram(bigrams, "social inequality")
 social_inequality_tbl <- social_inequality$data
 social_inequality_tbl[which.max(social_inequality_tbl$bigram_ratio), ]
-JSTOR_1bigram(bigrams, "social complexity")
+bi_socialcomplexity <- JSTOR_1bigram(bigrams, "social complexity")
 # correlation of words over time
-JSTOR_2bigrams(bigrams, "social inequality", "social complexity")
+bi_ineq_comp <- JSTOR_2bigrams(bigrams, "social inequality", "social complexity")
 ```
 
 For the second question about the correlation between social inequality and European contact, the plot of two terms shows that there is a similar trend before 1994, but after 1994 there is no clear pattern shows the relationship. When we further examine the correlation between these two terms, the plot indicates that there is only an article shows the relatively strong correlation at 1986. In addition to European contact, I also examine the correlation between social inequality and social complexity. The plot shows that they are strongly correlated at 1987, 1998, and 2007, which shows the periodic pattern of discussion. This plot also explains the pattern in the former plot of word frequency over time.
 
 ```{r bigrams}
 # two words over timw
-JSTOR_2bigrams(bigrams, "social inequality", "european contact")
+bi_ineq_euro <- JSTOR_2bigrams(bigrams, "social inequality", "european contact")
 # correlation of words over time
-JSTOR_2bigramscor(bigrams, "social inequality", "european contact")
-JSTOR_2bigramscor(bigrams, "social complexity", "social inequality")
+bicor_ineq_euro <- JSTOR_2bigramscor(bigrams, "social inequality", "european contact")
+bicor_comp_ineq <- JSTOR_2bigramscor(bigrams, "social complexity", "social inequality")
 ```
 
 I further examine the topic of inequality in terms of different areas, such as Asia, Oceania, America, and Africa. The results show that in Asia, most articles contain inequality exist after 1978, and the term reached the highest frequency at 2004, but declined later at 2009. For Oceania, the trend shows there are two periods with higher frequency, which are 1996 and 2004. For America, there are more articles refer to inequality, and this term was popular around 2005. The pattern of frequency in Africa looks similar to the pattern in America, and also shows the highest frequency at 2005. Although these four plots have different trends of the frequency of inequality, it seems this term was popular between 2004 and 2005 among these different areas.   
@@ -118,7 +118,7 @@ JSTOR_1word(Afr_data, "inequality")
 
 For the third questions, these plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery. For the beads, it indicates that a couple of articles have strong positive correlation around 1990. In addition, there is no much discussion until 1976. For the burials, it also shows that the discussion of burial and inequality become common after the publication of the article in 1976. Besides, is seems the articles could be divided into two groups according to the extent of correlation. For the pottery, there is no clear correlation until 2006. After 2006, some articles show the positive correlation. 
 
-```{r onegram2}
+```{r onegram2, eval= FALSE}
 # correlation of inequality and evidence over time
 JSTOR_2wordcor(multiple_archives, "burials", "inequality")
 JSTOR_2wordcor(multiple_archives, "pottery", "inequality")
