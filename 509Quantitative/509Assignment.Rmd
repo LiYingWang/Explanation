@@ -1,5 +1,5 @@
 
-# Introduction
+### Introduction
 
 Data mining is a method to obtain the development of some topic over time, and further examine the relevent articles. In this paper, I will examine the term "social inequality" as a topic in archaeology by using R. My potential questions for this quantitative research project as following:
 
@@ -123,9 +123,12 @@ cor_ineq_bead$plot
 
 TBA
 
-```{r onegram3, eval= TRUE}
+```{r onegram3, eval= TRUE, results='hide'}
 # subset samples
 nouns <- JSTOR_dtmofnouns(multiple_archives, word = NULL, sparse =1, POStag = TRUE)
+```
+
+```{r various_pca}
 # Principal component analysis for articles containing inequality
 PCA_inequality <- JSTOR_clusterbywords(nouns, "inequality", f = 0.005)
 PCA_inequality <- JSTOR_clusterbywords(nouns_Asia, "inequality", f = 0.005)
