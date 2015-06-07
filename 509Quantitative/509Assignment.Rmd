@@ -10,7 +10,7 @@ Social inequality refers to power relation and principle of hierarchical structu
 
 The development of the explanatory model of social inequality, the relationship between social inequality and culture contact, and the archaeological evidence relates to this model will be my research subjects.  In order to test the development of social inequality based on above claims, I will explore the model of explanation of "social inequality" in archaeology by using R as a quantitative method. I will investigate how is the development of this model based on a large sample of archaeological literature over 50 years. My research questions for this project as following:  
 
-1. What is the trend of the explanatory model of social inequality in archaeology in the past decades? Is it popular at any particular time?
+1. What is the trend of the explanatory model of social inequality in archaeology in the past decades? Is it popular at any particular time? 
 
 2. How often social inequality relates to culture contact? Especially for European contact.  Also, does any area show preference of such research, such as America, Asia, Oceania, or Africa?    
 
@@ -44,6 +44,8 @@ nouns_Oce <- JSTOR_dtmofnouns(multiple_archives, word = "oceania", sparse =1, PO
 nouns_Afr <- JSTOR_dtmofnouns(multiple_archives, word = "africa", sparse =1, POStag = TRUE)
 ```
 
+
+### Data 
 For the first question of the trend of social inequality, the plots show that the topic of inequality becomes common after maybe 1992, and then has became popular around 2006. The term "social" is commoner than the term "inequality". I think the reason is that this term "social" is too general. The third graph shows that social and inequality were decussated together after 1978, but slightly goes down around 1986, and then popular again from 1994. Based on the results, I can further explore the exact articles with the word inequality.  
 
 The article with strongest correlation of the relationship of "social" and "inequality" as following:
@@ -54,18 +56,20 @@ Sandra Montón Subías, 2007, Interpreting Archaeological Continuities: An Appro
 inequality <- JSTOR_1word(multiple_archives, "inequality")
 inequality$plot
 inequality_tbl <- inequality$word_by_year
-inequality_tbl[which.max(inequality_tbl$word_by_year), ]
+#inequality_tbl[which.max(inequality_tbl$word_by_year), ]
 # two words over time
 two_soc_ine <- JSTOR_2words(multiple_archives, "social", "inequality")
 two_soc_ine$plot
 two_soc_ine_tbl <- two_soc_ine$words_by_year
-two_soc_ine_tbl[which.max(two_soc_ine_tbl$value), ]
+#two_soc_ine_tbl[which.max(two_soc_ine_tbl$value), ]
 # correlation of words over time
 cor_soc_ine <- JSTOR_2wordcor(multiple_archives, "social", "inequality")
 cor_soc_ine$plot
 soc_ine_paper <- two_soc_ine_tbl[(two_soc_ine_tbl$year == 2007), ]
-soc_ine_paper[which.max(soc_ine_paper$value), ]
+#soc_ine_paper[which.max(soc_ine_paper$value), ]
 ```
+
+Figure 1: 
 
 If I use "social inequality" as a term, the plots shows that such discussion only exists after 1978, becomes popular around 2000, and slightly goes down at 2002. In archaeology, social inequality is one of the indexes for social complexity. Therefore, I will also examine the discussion of social complexity in order to have a general understanding of such topic. The discussion of "social complexity" begins from 1947, becomes popular at around 1978, slightly goes down at 1990 and 2006, and then popular again at 2010. It seems like there is not big change in the discussion of these two terms. If we examine these two terms over time, the plot shows that they have different pattern of frequency. When social inequality was frequently discusses, the frequency of social complexity becomes lower. This might indicates the terms of social inequality and social complexity might have some pattern of relationship, which is to some extent mutually exclusive. Social inequality could be viewed as more specific approach to social complexity. 
 
