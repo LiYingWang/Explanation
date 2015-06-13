@@ -163,7 +163,7 @@ bicor_ineq_euro
 
 Figure 8: Correlation between social inequality and European contact
 
-I further examine the topic of inequality in terms of different areas, including Asia, Oceania, America, and Africa. Results show that in Asia, most articles contain inequality exist after 1978, and the term reached the highest frequency at 2004, but declined later at 2009. For Oceania, the trend shows there are two periods with higher frequency, which are 1996 and 2004. For America, there are more articles refer to inequality, and this term was popular around 2005. The pattern of frequency in Africa looks similar to the pattern in America, and also shows the highest frequency at 2005. Although these four plots have different trends of the frequency of inequality, it seems social inequality was popular between 2004 and 2005 among these different areas.  This indicates there might be some articles cover all of these areas. In addition, the frequency of inequality in America and Africa shows similar pattern, which might suggests there are some close relationship between them.     
+I further examine the topic of inequality in terms of different areas, including Asia, Oceania, America, and Africa. Results (Figure 9) show that in Asia, most articles contain inequality exist after 1978, and the term reached the highest frequency at 2004, but declined later at 2009. For Oceania (Figure 10), the trend shows there are two periods with higher frequency, which are 1996 and 2004. For America (Figure 11), there are more articles refer to inequality, and this term was popular around 2005. The pattern of frequency in Africa (Figure 12) looks similar to the pattern in America, and also shows the highest frequency at 2005. Although these four plots have different trends of the frequency of inequality, it seems social inequality was popular between 2004 and 2005 among these different areas.  This indicates there might be some articles cover all of these areas. In addition, the frequency of inequality in America and Africa shows similar pattern, which might suggests there are some close relationship between them.     
 
 ```{r subset_data2, results='hide'}
 # subset the data to different area for PCA
@@ -203,7 +203,7 @@ ineq_Afr$plot
 Figure 12: The word "Inequality" over time in studies relate to Africa
 
 #### Archaeological evidence relates to social inequality
-For the third question, these plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery. For burials, it also shows that the discussion of burial and inequality become common after the publication of an article in 1976. Besides, is seems that articles could be divided into two groups according to the extent of correlation. For pottery, there is no clear correlation until 2006. After 2006, some articles show the strong correlation. For beads, the plot indicates that a couple of articles have strong correlation around 1990. In addition, there is no much discussion until 1976. The plot for house shows that there is a strong correlation at 2012. These patterns show that burials and houses are common evidence to discuss social inequality from the early period to the most recent period, and pottery also becomes common over time. 
+For the third question, these plots show the relationship between the term 'inequality' and other archaeological evidence, including beads, burials, and pottery. For burials (Figure 13), it also shows that the discussion of burial and inequality become common after the publication of an article in 1976. Besides, is seems that articles could be divided into two groups according to the extent of correlation. For pottery (Figure 14), there is no clear correlation until 2006. After 2006, some articles show the strong correlation. For beads (Figure 15), the plot indicates that a couple of articles have strong correlation around 1990. In addition, there is no much discussion until 1976. The plot for house (Figure 16) shows that there is a strong correlation at 2012. These patterns show that burials and houses are common evidence to discuss social inequality from the early period to the most recent period, and pottery also becomes common over time. 
 
 ```{r onegram4_burial}
 # correlation of inequality and evidence over time
@@ -235,7 +235,7 @@ cor_ineq_house$plot
 Figure 16: Correlation of inequality and house
 
 #### Top words related to inequality over time
-Top words in all documents containing “inequality” show that focuses change with time. The top words shift from population, organization, and mound to ritual, power and pottery. This indicates that archaeologists focus more on anthropological questions recently since 2006. Moreover, the term "river" and "coast" are also top words associated with inequality recently. These geographic features might indicate some conditions for social inequality. Based on the results, I further explore the correlation between "inequality" and "ritual" and "power" respectively. Figure 18 shows that there are several strong correlations between ritual and inequality at 1963, and moderate correlations at 1977, 1984, 2000 and 2011. On the other hand, Figure 19 shows strong correlations between inequality and power at 1979 and 1990, and several moderate correlations from 1978 to 2011. These patterns indicate that ritual and power are common topics that are associated with inequality. In addition, the discussion of power is later than the discussion of ritual.                
+Top words in all documents containing “inequality” show that focuses change with time. Figure 17 shows that top words shift from population, organization, and mound to ritual, power and pottery. This indicates that archaeologists focus more on anthropological questions recently since 2006. Moreover, the term "river" and "coast" are also top words associated with inequality recently. These geographic features might indicate some conditions for social inequality. Based on the results, I further explore the correlation between "inequality" and "ritual" and "power" respectively. Figure 18 shows that there are several strong correlations between ritual and inequality at 1963, and moderate correlations at 1977, 1984, 2000 and 2011. On the other hand, Figure 19 shows strong correlations between inequality and power at 1979 and 1990, and several moderate correlations from 1978 to 2011. These patterns indicate that ritual and power are common topics that are associated with inequality. In addition, the discussion of power is later than the discussion of ritual.                
  
 ```{r onegram5, eval= TRUE, results= 'hide'}
 ineq_nouns <- JSTOR_dtmofnouns(multiple_archives, word = 'inequality', sparse =1, POStag = TRUE)
@@ -251,16 +251,8 @@ ineq_freqwords <- JSTOR_freqwords(multiple_archives, ineq_nouns, custom_stopword
 Figure17: The top words associated with inequality over time
 
 ```{r onegram7}
-# two words over time
-two_ri_ine <- JSTOR_2words(multiple_archives, "ritual", "inequality")
-two_ri_ine
-two_ri_ine_tbl <- two_ri_ine$words_by_year
-#two_ri_ine_tbl[which.max(two_ri_ine_tbl$value), ]
-# correlation of words over time
 cor_ri_ine <- JSTOR_2wordcor(multiple_archives, "ritual", "inequality")
 cor_ri_ine$plot
-#ri_ine_paper <- two_ri_ine_tbl[(two_ri_ine_tbl$year == 2011), ]
-#ri_ine_paper[which.max(ri_ine_paper$value), ]
 ```
 
 Figure18: Correlation of inequality and ritual
